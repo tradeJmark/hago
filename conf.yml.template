@@ -1,0 +1,15 @@
+broker:
+  url: mosquitto
+  port: 1883
+devices:
+  - type: serial-light
+    properties:
+      state_topic: "home-automation/kitchen/main/status"
+      command_topic: "home-automation/kitchen/main/set"
+      payload_on: "ON"
+      payload_off: "OFF"
+    device_specific:
+      device: COM4
+      status_command: status
+client:
+  name: kitchen
